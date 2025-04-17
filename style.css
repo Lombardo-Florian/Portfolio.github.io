@@ -1,0 +1,604 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #f0f6f9;
+  color: #333;
+}
+
+
+
+
+
+header {
+  background-color: #2d3e50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* MENU sticky */
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #3b4c63;
+  z-index: 1000;
+}
+
+nav ul.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+}
+
+nav ul.menu li {
+  position: relative;
+}
+
+nav ul.menu li a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  display: block;
+}
+
+nav ul.menu li a:hover {
+  background-color: #567;
+  border-radius: 5px;
+}
+
+/* MENU déroulant */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #4c607a;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+}
+
+.dropdown-content li {
+  border-bottom: 1px solid #567;
+}
+
+.dropdown-content li a {
+  padding: 0.8rem;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ACTIVE link sur la page */
+.menu a.active {
+  border-bottom: 2px solid #a0c4ff;
+  color: #a0c4ff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* TITRES uniformes */
+h2 {
+  font-size: 2rem;
+  color: #2d3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ZONE PRINCIPALE */
+main {
+  /*padding: 2rem;*/
+  margin: 0 auto;
+  max-width: 1000px;
+  text-align: justify;
+}
+
+/* FOOTER */
+footer {
+  background-color: #2d3e50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  z-index: 0;
+}
+
+/* FORMULAIRE CONTACT */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.contact-form button {
+  background-color: #3b4c63;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #567;
+}
+
+/* FLÈCHES (navigation entre pages) */
+.navigation-buttons {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 1000;
+  pointer-events: none;
+  padding: 0 1rem;
+}
+
+.nav-arrow {
+  pointer-events: auto;
+  font-size: 4rem;
+  color: #2d3e50;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: transform 0.3s, color 0.3s, opacity 0.3s;
+}
+
+.nav-arrow:hover {
+  transform: scale(1.2);
+  color: #a0c4ff;
+  opacity: 1;
+}
+
+.nav-arrow.left {
+  position: fixed;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+}
+
+.nav-arrow.right {
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+
+/* PRÉSENTATION */
+
+.presentation {
+  max-width: 800px;
+  margin: 2rem auto 0 auto;
+  text-align: left;
+  background-color: #ffffff; /* fond blanc opaque */
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* ombre douce, sans transparence visible du fond */
+}
+
+
+.presentation h2 {
+  margin-bottom: 1rem;
+  color: #2d3e50;
+}
+
+.presentation p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* FLÈCHE pour scroller vers le bas */
+.scroll-arrow {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3rem;
+      color: rgba(0, 0, 0, 0.5);
+      text-decoration: none;
+      z-index: 1000;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    .scroll-arrow:hover {
+      color: rgba(0, 0, 0, 0.8);
+      transform: translateX(-50%) scale(1.2);
+    }
+
+.scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* SECTIONS */
+section {
+  position: relative;
+  /*min-height: 100vh;*/
+ /* padding: 4rem 2rem;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-margin-top: 100px;
+}
+
+/* SCROLL DOUX */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #2d3e50; /* même fond que ton header */
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-content h1 {
+  align-self: flex-start;
+  padding-left: 2rem; /* décale à gauche comme le menu */
+  margin-bottom: 0.3rem;
+}
+
+
+.header-content .subtitle {
+  margin-top: 0; /* supprime l’espace au-dessus du sous-titre */
+  font-size: 1rem; /* au cas où tu veux un texte plus petit */
+}
+
+
+.nav-arrow.floating {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg); /* Flèche vers le bas */
+  color: #2d3e50;
+  font-size: 4rem;
+  text-decoration: none;
+  z-index: 1000;
+  transition: transform 0.3s, color 0.3s, opacity 0.3s;
+  opacity: 0.5; /* un peu transparent par défaut */
+}
+
+.nav-arrow.floating:hover {
+  transform: translateX(-50%) rotate(90deg) scale(1.2); /* Zoom au survol */
+  color: #a0c4ff;
+  opacity: 1;
+}
+
+.nav-arrow.down {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(90deg); /* flèche vers le bas */
+  font-size: 4rem;
+  color: #2d3e50;
+  text-decoration: none;
+  z-index: 1000;
+  opacity: 0.5;
+  transition: transform 0.3s, color 0.3s, opacity 0.3s;
+  pointer-events: auto;
+}
+
+.nav-arrow.down:hover {
+  transform: translateX(-50%) rotate(90deg) scale(1.2);
+  color: #a0c4ff;
+  opacity: 1;
+}
+
+
+
+.nolark-img {
+  float: left;
+  width: 400px; /* à ajuster selon la distance jusqu'à "c" */
+  height: auto;
+  margin-right: 1rem;   /* espace entre l’image et le texte */
+  margin-bottom: 0.5rem;
+}
+
+.nolark-paragraph {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.rightNolark-img {
+  float: right;
+  width: 400px; /* ajustable pour tomber pile sur "création de" */
+  height: auto;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+
+.gsb-img {
+  float: left;
+  width: 500px;
+  height: auto;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.gsb-paragraph {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+
+.rightGSB-img {
+  float: right;
+  width: 400px;
+  height: auto;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+
+
+.cgb-img {
+  float: left;
+  width: 175px;
+  height: auto;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cgb-paragraph {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+
+.photoProfil-img {
+  float: left;
+  width: 150px;
+  height: auto;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+
+
+
+/* Supprimer toute marge supérieure non désirée sur la page Contact */
+body.contact-page main:first-of-type {
+  margin-top: 0.3rem;
+}
+/*
+body.contact-page main:first-of-type {
+  padding-top: 0 !important;
+}
+
+
+body.contact-page section:first-of-type {
+  margin-top: 0 !important;
+}
+
+
+body.contact-page section:first-of-type {
+  padding-top: 0 !important;
+}
+
+
+body.contact-page h2:first-of-type {
+  margin-top: 0 !important;
+}
+
+
+body.contact-page h2:first-of-type {
+  padding-top: 0 !important;
+}
+
+*/
+
+
+/* Mise en page en colonnes pour la section présentation */
+.presentation.double-column {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.presentation.double-column .column {
+  flex: 1;
+  min-width: 300px;
+}
+
+.presentation.double-column h2 {
+  text-align: left;
+}
+
+.presentation.double-column h3 {
+  margin-top: 1.5rem;
+  color: #3b4c63;
+}
+
+
+/* Appliquer un fond léger uniquement à la colonne "Mon parcours" */
+/* Appliquer un fond aux deux colonnes */
+.presentation.double-column .column {
+  background-color: #e2ecf2;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+
+
+.sous-titre {
+  align-self: flex-start;
+  padding-left: 2rem; /* identique à l'alignement du menu */
+  margin-top: 0.5rem;
+  font-size: 1.25rem; /* tu peux ajuster selon ta préférence */
+  color: white; /* à adapter selon ton fond */
+}
+
+
+
+
+
+.presentation.double-column {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: stretch; /* étend les deux colonnes à la même hauteur */
+  flex-wrap: wrap;
+}
+
+
+.presentation.double-column .column {
+  flex: 1;
+  min-width: 300px;
+}
+
+
+
+.background-side-image {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: auto;
+  z-index: -1; /* En arrière-plan */
+  pointer-events: none;
+  opacity: 1; /* Pleine opacité */
+}
+
+.background-side-image.right {
+  right: 0;
+  max-width: 40vw; /* Ajuste selon le rendu souhaité */
+}
+
+
+.background-side-image.left {
+  left: 0;
+  transform: scaleX(-1); /* Effet miroir */
+  max-width: 40vw;
+}
+
+
+
+.inline-subtitle {
+  font-weight: normal; /* Pour ne pas écraser le nom */
+  font-size: 20px;
+}
+
+
+
+.btn-cv {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b4c63; /* Couleur principale du site */
+  color: white;
+  border: none;
+  border-radius: 50px; /* Arrondi bien rond */
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-cv:hover {
+  background-color: #567; /* Couleur au survol */
+  transform: scale(1.05);
+}
+
+/*
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: black;
+  }
+}
+
+*/
+
+/* ===== RESPONSIVE : Garde le menu horizontal ===== */
+@media (max-width: 768px) {
+  nav ul.menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .presentation.double-column {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .presentation.double-column .column {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .photoProfil-img,
+  .nolark-img,
+  .rightNolark-img,
+  .gsb-img,
+  .rightGSB-img,
+  .cgb-img {
+    float: none;
+    display: block;
+    margin: 0 auto 1rem auto;
+    max-width: 90%;
+  }
+
+  .background-side-image {
+    display: none; /* Masquer les images décoratives latérales */
+  }
+
+  .nav-arrow {
+    font-size: 3rem;
+  }
+
+  .btn-cv {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .header-content h1 {
+    font-size: 1.3rem;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .inline-subtitle {
+    font-size: 0.95rem;
+    display: block;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+}
+
+
